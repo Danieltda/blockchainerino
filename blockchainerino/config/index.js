@@ -50,6 +50,9 @@ module.exports = (app) => {
     favicon(path.join(__dirname, "..", "public", "images", "favicon.ico"))
   );
 
+  const MONGO_URI =
+    process.env.MONGODB_URI || "mongodb://localhost/blockchainerino";
+
   // ℹ️ Middleware that adds a "req.session" information and later to check that you are who you say you are 😅
   app.use(
     session({
