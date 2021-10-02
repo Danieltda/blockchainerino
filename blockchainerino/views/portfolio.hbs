@@ -1,9 +1,9 @@
 <h1>Manage your portfolio!</h1>
 <form action="./portfolio" method="POST">
-  <label for="">Coin
+  <label for="">Select Your Coin
     <select name="" id="coinname" onChange="update()">
-      <ul>{{#each coinnames}}
-          <option value={{this}}>{{this}}</option>
+      <ul>{{#each coinname}}
+          <option value={{this.coinprice}}>{{this.coinname}}</option>
         {{/each}}
       </ul>
     </select>
@@ -11,17 +11,24 @@
   <br />
   <label>
     Current Price
-    <input type={{this}} name="currentPrice" id="current-price" readonly />
+    <input type="text" name="currentPrice" id="current-price" readonly />
   </label>
   <br />
   <label>
-    Amount
+    Crypto Amount
     <input
       placeholder="Please fill in the amount"
       type="text"
       name="amount"
       id="current-price"
     />
+  </label>
+  <br />
+  <label>
+    <label>
+      Total Value
+      <input type="text" name="totalvalue" id="total-value" readonly />
+    </label>
   </label>
 
   <h2>Your portfolio</h2>
