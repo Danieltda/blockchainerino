@@ -1,7 +1,7 @@
 <h1>Manage your portfolio!</h1>
 <form action="./portfolio" method="POST">
   <label for="">Select Your Coin
-    <select name="" id="coinname" onChange="update()">
+    <select name="coin" id="coinname" onChange="update()">
       <ul>{{#each coinname}}
           <option value={{this.coinprice}}>{{this.coinname}}</option>
         {{/each}}
@@ -18,9 +18,11 @@
     Crypto Amount
     <input
       placeholder="Please fill in the amount"
-      type="text"
+      type="number"
       name="amount"
-      id="current-price"
+      id="total-amount"
+      step=".01"
+      onchange="totalValue()"
     />
   </label>
   <br />
@@ -29,11 +31,16 @@
       Total Value
       <input type="text" name="totalvalue" id="total-value" readonly />
     </label>
+    <br />
+    <label for="">
+      <input type="submit" value="Submit" />
+    </label>
   </label>
 
   <h2>Your portfolio</h2>
   <label for="./portfolio" method="GET">
     <ul id="dynamic-list"></ul>
+    Coin
     <input type="text" name="newcoin" id="new-coin" />
   </label>
   <br />

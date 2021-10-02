@@ -5,7 +5,15 @@ const portfolioSchema = new Schema({
     type: Number,
     required: true,
   },
+  currentPrice: {
+    type: Number,
+    required: true,
+  },
   amount: {
+    type: Number,
+    required: true,
+  },
+  totalvalue: {
     type: Number,
     required: true,
   },

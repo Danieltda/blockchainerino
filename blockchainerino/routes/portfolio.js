@@ -26,8 +26,6 @@ router.get("/", async (req, res, next) => {
 
   // console.log(Object(axiosResponse));
 
-  console.log(coinName);
-
   // let result = coins.find(({ obj }) => {
   //   console.log(obj);
   // });
@@ -40,6 +38,22 @@ router.get("/", async (req, res, next) => {
 
   // console.log(axiosResponse.data);
   // console.log(coinPrice);
+});
+
+router.post("/", async (req, res) => {
+  const { coin, currentPrice, amount, totalvalue } = req.body;
+  console.log(req);
+  try {
+    await Portfolio.create({
+      coin,
+      currentPrice,
+      amount,
+      totalvalue,
+    });
+    res.redirect("/");
+  } catch (err) {
+    console.error(err);
+  }
 });
 
 // /* GET home page */
