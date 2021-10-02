@@ -15,19 +15,31 @@ router.get("/", async (req, res, next) => {
     }
   );
 
-  let coins = axiosResponse.data;
+  let coinNames = axiosResponse.data.data.map((coin) => coin.name);
 
-  // var result = coins.find((obj) => {
-  //   return obj.id === 7455;
+  let coinName = axiosResponse.data.data.map((coin) => ({
+    coinname: coin.name,
+    coinprice: coin.quote.USD.price,
+  }));
+
+  let coinPrice = axiosResponse.data.data.map((price) => price.quote.USD.price);
+
+  // console.log(Object(axiosResponse));
+
+  console.log(coinName);
+
+  // let result = coins.find(({ obj }) => {
+  //   console.log(obj);
   // });
 
-  console.log(result);
-
-  // console.log(coins);
-
-  res.render("portfolio");
+  res.render("portfolio", {
+    coinnames: coinNames,
+    coinprice: coinPrice,
+    coinname: coinName,
+  });
 
   // console.log(axiosResponse.data);
+  // console.log(coinPrice);
 });
 
 // /* GET home page */
@@ -36,17 +48,5 @@ router.get("/", async (req, res, next) => {
 //   console.log(data);
 //   res.render("index");
 // });
-
-// const axiosResponse = await axios.get("https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", {headers: {
-//     "X-CMC_PRO_API_KEY": APIKEY,
-//   })
-
-// rp(requestOptions)
-//   .then((response) => {
-//     console.log("API call response:", response);
-//   })
-//   .catch((err) => {
-//     console.log("API call error:", err.message);
-//   });
 
 module.exports = router;

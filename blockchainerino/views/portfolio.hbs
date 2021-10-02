@@ -1,18 +1,19 @@
 <h1>Manage your portfolio!</h1>
 <form action="./portfolio" method="POST">
-  <label>
-    Coin
-    <select name="coins" id="portfolio">
-      <optionvalue=""></option>
+  <label for="">Coin
+    <select name="" id="coinname" onChange="update()">
+      <ul>{{#each coinnames}}
+          <option value={{this}}>{{this}}</option>
+        {{/each}}
+      </ul>
     </select>
   </label>
-  <br>
+  <br />
   <label>
     Current Price
-<input type="text" name="currentPrice" id="current-price">
-    </select>
+    <input type={{this}} name="currentPrice" id="current-price" readonly />
   </label>
-  <br>
+  <br />
   <label>
     Amount
     <input
@@ -23,19 +24,19 @@
     />
   </label>
 
-<h2>Your portfolio</h2>
-  <label for="./portfolio" method ="GET">
-  <ul id="dynamic-list"></ul>
-  <input type="text" name="newcoin" id="new-coin">
+  <h2>Your portfolio</h2>
+  <label for="./portfolio" method="GET">
+    <ul id="dynamic-list"></ul>
+    <input type="text" name="newcoin" id="new-coin" />
   </label>
-  <br>
+  <br />
   <label>
     Current Price
-    <input type="text" name="pricenow" id="price-now">
+    <input type="text" name="pricenow" id="price-now" />
   </label>
-  <br>
+  <br />
   <label>
     Amount
-    <input type="text" name="amountnow" id="amount-now">
+    <input type="text" name="amountnow" id="amount-now" />
   </label>
 </form>
