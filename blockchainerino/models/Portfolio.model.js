@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const portfolioSchema = new Schema({
   coin: {
-    type: Number,
+    type: String,
     required: true,
   },
   currentPrice: {
