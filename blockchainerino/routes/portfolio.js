@@ -26,18 +26,11 @@ router.get("/", async (req, res, next) => {
 
   // console.log(Object(axiosResponse));
 
-  // let result = coins.find(({ obj }) => {
-  //   console.log(obj);
-  // });
-
   res.render("portfolio", {
     coinnames: coinNames,
     coinprice: coinPrice,
     coinname: coinName,
   });
-
-  // console.log(axiosResponse.data);
-  // console.log(coinPrice);
 });
 
 router.post("/", async (req, res) => {

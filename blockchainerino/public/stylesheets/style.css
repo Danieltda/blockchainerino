@@ -10,6 +10,8 @@ body {
   background-size: cover;
 }
 
+/*Homepage styling*/
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -117,7 +119,7 @@ nav {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* index styling */
+/* index ethereum styling */
 .section-one {
   text-align: center;
   padding-top: 14rem;
@@ -132,6 +134,12 @@ nav {
 #ethereum-title {
   color: white;
   font-size: 5rem;
+}
+
+.section-two {
+  text-align: center;
+  color: white;
+  padding-top: 2rem;
 }
 
 /* signup styling */
@@ -157,4 +165,56 @@ nav {
 .title-header a {
   text-decoration: none;
   color: rgb(226, 226, 266);
+}
+
+/*Portfolio style changes */
+.portfolio-section {
+  text-align: center;
+  color: white;
+  margin-top: 4rem;
+  margin-left: 2rem;
+  border-bottom: 2px solid white;
+  margin-right: 7rem;
+}
+
+#submit-portfolio {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#portfolio-header {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.title-portfolio {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.your-portfolio {
+  text-align: left;
+  color: white;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+/* Login styling */
+.login {
+  color: white;
+  text-align: center;
+}
+
+#login-header {
+  font-size: 5rem;
+  padding-top: 10rem;
+  padding-bottom: 3rem;
+}
+
+#login-username {
+  margin-bottom: 1rem;
+}
+
+#login-password {
+  margin-bottom: 1rem;
 }

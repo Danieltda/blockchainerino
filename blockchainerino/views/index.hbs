@@ -3,8 +3,8 @@
     <h4 class="title-header"><a href="/">BLOCKCHAINERINO</h4></a>
   </div>
   <ul class="nav-links">
-    <li><a href="./auth/signup">Sign up</a></li>
-    <li><a href="./auth/login">Log in</a></li>
+    <li><a href="./auth/signup">Sign Up</a></li>
+    <li><a href="./auth/login">Log In</a></li>
     <li><a href="./portfolio">Portfolio</a></li>
   </ul>
   <div class="burger">
@@ -15,7 +15,7 @@
 </nav>
 <section class="section-one">
   <h1 id="ethereum-title">Ethereum Balance</h1>
-  <form action="/" method="POST">
+  <form action="/" method="GET">
     <label>
       <input
       name="ethereumAddress"
@@ -27,4 +27,16 @@
     <br />
     <input onclick ="getEthereumAddress()" type="submit" value="Submit" />
   </form>
+</section>
+<section class="section-two">
+  <h1 id="ethereum-total-amount">Total Ethereum Amount:</h1>
+    <label>
+      <input
+      name="totalEthereum"
+        type="text"
+        id ="total-amount"
+        placeholder="Total Amount"
+        readonly
+      />
+    </label>
 </section>

@@ -54,5 +54,12 @@ navSlide();
 //Get user input from the index ehtereum
 function getEthereumAddress() {
   let input = document.getElementById("ethereum-input").value;
+  totalEthereumAmount(input);
   console.log(input);
+}
+
+//Show total value
+function totalEthereumAmount(input) {
+  let inputTotal = (document.getElementById("total-amount").value = input);
+  console.log(inputTotal);
 }

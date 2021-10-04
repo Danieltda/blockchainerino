@@ -3,8 +3,8 @@
      <h4 class="title-header"><a href="/" >BLOCKCHAINERINO</h4></a>
   </div>
   <ul class="nav-links">
-    <li><a href="./auth/signup">Sign up</a></li>
-    <li><a href="./auth/login">Log in</a></li>
+    <li><a href="./auth/signup">Sign Up</a></li>
+    <li><a href="./auth/login">Log In</a></li>
     <li><a href="/portfolio">Portfolio</a></li>
   </ul>
   <div class="burger">
@@ -13,9 +13,10 @@
     <div class="line3"></div>
   </div>
 </nav>
-<h1>Manage your portfolio!</h1>
+<section class="portfolio-section">
+<h1 id="portfolio-header">Manage your portfolio!</h1>
 <form action="./portfolio" method="POST">
-  <label>Select Your Coin
+  <label class="title-portfolio">Select Your Coin
     <select name="coin" id="coinname" onChange="update()">
       <ul>{{#each coinname}}
           <option
@@ -27,12 +28,12 @@
     </select>
   </label>
   <br />
-  <label>
+  <label class="title-portfolio">
     Current Price
     <input type="text" name="currentPrice" id="current-price" readonly />
   </label>
   <br />
-  <label>
+  <label class="title-portfolio">
     Crypto Amount
     <input
       placeholder="Please fill in the amount"
@@ -44,15 +45,17 @@
     />
   </label>
   <br />
-  <label>
+  <label class="title-portfolio">
     Total Value
     <input type="text" name="totalvalue" id="total-value" readonly />
   </label>
   <br />
   <label>
-    <input type="submit" value="Submit" />
+    <input id="submit-portfolio" type="submit" value="Submit" />
   </label>
-
+</form>
+</section>
+<section class="your-portfolio">
   <h2>Your portfolio</h2>
   <label action="./portfolio" method="GET">
     <ul id="dynamic-list"></ul>
@@ -69,4 +72,4 @@
     Amount
     <input type="text" name="amountnow" id="amount-now" />
   </label>
-</form>
+</section>
