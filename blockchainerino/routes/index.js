@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const mongoose = require("mongoose");
+const { error } = require("npmlog");
 const API_KEY_INFURA = process.env.API_KEY_INFURA;
 // or using the web3 umbrella package
 const Web3 = require("web3");
@@ -16,11 +17,15 @@ const web3 = new Web3(provider);
 
 /* GET home page */
 router.get("/", async (req, res, next) => {
-  const balance = web3.utils.fromWei(
-    await web3.eth.getBalance("0x79eB66260FC67B9560deF2900AF925FAB4d8D85c")
-  );
-  res.render("index");
-  console.log(balance);
+  try {
+    const balance = web3.utils.fromWei(
+      await web3.eth.getBalance("0x79eB66260FC67B9560deF2900AF925FAB4d8D85c")
+    );
+    res.render("index");
+    console.log(balance);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 module.exports = router;
