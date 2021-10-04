@@ -20,7 +20,9 @@
     "mongoose": "^6.0.7",
     "morgan": "^1.10.0",
     "request-promise": "^4.2.6",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "web3": "^1.6.0",
+    "web3-eth": "^1.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

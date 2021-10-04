@@ -42,6 +42,7 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res) => {
   const { coin, currentPrice, amount, totalvalue } = req.body;
+  //console.log(coin);
   try {
     await Portfolio.create({
       coin,
@@ -54,12 +55,5 @@ router.post("/", async (req, res) => {
     console.error(err);
   }
 });
-
-// /* GET home page */
-// router.get("/", async (req, res, next) => {
-//   let data = await CoinGeckoClient.coins.fetch("ethereum", {}).market_data;
-//   console.log(data);
-//   res.render("index");
-// });
 
 module.exports = router;

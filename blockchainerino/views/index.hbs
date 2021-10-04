@@ -1,11 +1,30 @@
-<header>
-  <div>
-    <nav>
-      <ul>
-        <li><a href="./auth/login">Log in</a></li>
-        <li><a href="./auth/signup">Sign up</a></li>
-        <li><a href="./portfolio">Portfolio</a></li>
-      </ul>
-    </nav>
+<nav>
+  <div class="logo">
+    <h4 class="title-header"><a href="/">BLOCKCHAINERINO</h4></a>
   </div>
-</header>
+  <ul class="nav-links">
+    <li><a href="./auth/signup">Sign up</a></li>
+    <li><a href="./auth/login">Log in</a></li>
+    <li><a href="./portfolio">Portfolio</a></li>
+  </ul>
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</nav>
+<section class="section-one">
+  <h1 id="ethereum-title">Ethereum Balance</h1>
+  <form action="/" method="POST">
+    <label>
+      <input
+      name="ethereumAddress"
+        type="text"
+        id="ethereum-input"
+        placeholder="Please fill in your Ethereum address"
+      />
+    </label>
+    <br />
+    <input onclick ="getEthereumAddress()" type="submit" value="Submit" />
+  </form>
+</section>
