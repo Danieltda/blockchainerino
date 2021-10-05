@@ -15,6 +15,8 @@ function update() {
   document.getElementById("current-price").value = select.value;
 }
 
+update();
+
 //function to update the total value
 // Current price times the crypto amount
 function totalValue() {
@@ -51,7 +53,7 @@ const navSlide = () => {
 
 navSlide();
 
-//Get user input from the index ehtereum
+//Get user input from the index ethereum
 function getEthereumAddress() {
   let input = document.getElementById("ethereum-input").value;
   totalEthereumAmount(input);
