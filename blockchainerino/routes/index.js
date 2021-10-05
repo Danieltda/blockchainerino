@@ -17,16 +17,15 @@ const web3 = new Web3(provider);
 
 /* GET home page */
 router.get("/", async (req, res, next) => {
-  const ethereumAddress = req.body;
-  console.log(ethereumAddress);
+  const { ethereumAddress } = req.query;
   try {
-    const balance = web3.utils.fromWei(
-      await web3.eth.getBalance("0x79eB66260FC67B9560deF2900AF925FAB4d8D85c")
-    );
+    let balance = "";
+    if (ethereumAddress) {
+      balance = web3.utils.fromWei(await web3.eth.getBalance(ethereumAddress));
+    }
     res.render("index", { totalEthereum: balance });
-    console.log(balance);
   } catch (err) {
-    console.log(err);
+    return err;
   }
 });
 

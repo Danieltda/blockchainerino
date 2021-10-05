@@ -2,9 +2,34 @@ document.addEventListener(
   "DOMContentLoaded",
   () => {
     console.log("blockchainerino JS imported successfully!");
+    update();
   },
   false
 );
+
+//update current price based on coin
+function update() {
+  const select = document.getElementById("coinname");
+  const options = select.options;
+
+  const index = [...options].find((element) => {
+    return element.value === select.value;
+  });
+
+  const currentPrice = document.getElementById("current-price");
+
+  currentPrice.value = index.dataset.coinvalue;
+}
+
+//function to update the total value
+// Current price times the crypto amount
+function totalValue() {
+  let currentPrice = document.getElementById("current-price").value;
+  console.log(currentPrice);
+  let cryptoAmount = document.getElementById("total-amount").value;
+  console.log(cryptoAmount);
+  document.getElementById("total-value").value = currentPrice * cryptoAmount;
+}
 
 //Created a hamburger menu
 const navSlide = () => {
@@ -31,16 +56,3 @@ const navSlide = () => {
 };
 
 navSlide();
-
-// //Get user input from the index ethereum
-// function getEthereumAddress() {
-//   let input = document.getElementById("ethereum-input").value;
-//   totalEthereumAmount(input);
-//   console.log(input);
-// }
-
-// //Show total value
-// function totalEthereumAmount(input) {
-//   let inputTotal = (document.getElementById("total-amount").value = input);
-//   console.log(inputTotal);
-// }

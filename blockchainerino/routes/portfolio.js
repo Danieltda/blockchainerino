@@ -35,7 +35,6 @@ router.get("/", async (req, res, next) => {
 
 router.post("/", async (req, res) => {
   const { coin, currentPrice, amount, totalvalue } = req.body;
-  //console.log(coin);
   try {
     await Portfolio.create({
       coin,

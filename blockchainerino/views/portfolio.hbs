@@ -18,13 +18,14 @@
 <form action="./portfolio" method="POST">
   <label class="title-portfolio">Select Your Coin
     <select name="coin" id="coinname" onChange="update()">
-      <ul>{{#each coinname}}
-          <option
-            name="test"
-            value={{this.coinprice}}
+      {{#each coinname}}
+          <option  
+            name="coin"
+            value={{this.coinname}}
+            data-coinvalue="{{this.coinprice}}"
           >{{this.coinname}}</option>
         {{/each}}
-      </ul>
+      
     </select>
   </label>
   <br />
@@ -73,3 +74,5 @@
     <input type="text" name="amountnow" id="amount-now" />
   </label>
 </section>
+
+<script src="/js/handlePortfolio.js"></script>
