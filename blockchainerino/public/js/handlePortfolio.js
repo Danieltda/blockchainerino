@@ -3,6 +3,7 @@ document.addEventListener(
   () => {
     console.log("blockchainerino JS imported successfully!");
     update();
+    hidePortfolio();
   },
   false
 );
@@ -56,3 +57,13 @@ const navSlide = () => {
 };
 
 navSlide();
+
+//Hide your portfolio
+function hidePortfolio() {
+  const section = document.getElementsByClassName("your-portfolio");
+  if (section.style.display === "none") {
+    section.style.display = "block";
+  } else {
+    section.style.display = "none";
+  }
+}

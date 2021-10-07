@@ -42,7 +42,8 @@ router.post("/", async (req, res) => {
       amount,
       totalvalue,
     });
-    res.redirect("/");
+    // res.render({ newcoin: coinValue });
+    res.redirect("/portfolio");
   } catch (err) {
     console.error(err);
   }

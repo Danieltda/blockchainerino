@@ -193,10 +193,39 @@ nav {
 }
 
 .your-portfolio {
-  text-align: left;
+  align-items: center;
+  text-align: center;
   color: white;
   margin-top: 2rem;
   margin-left: 1rem;
+  font-size: 2rem;
+}
+
+#table {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.tr {
+  font-size: 1.5rem;
+}
+
+#tr-one {
+  padding-left: 1rem;
+}
+
+.name-c {
+  padding-right: 2rem;
+}
+
+.amount-c {
+  padding-left: 2rem;
+}
+
+#submit-myportfolio {
+  margin-top: 1rem;
 }
 
 /* Login styling */

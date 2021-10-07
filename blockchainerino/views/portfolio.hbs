@@ -56,22 +56,37 @@
   </label>
 </form>
 </section>
-<section class="your-portfolio">
+<section class="your-portfolio" onclick="hidePortfolio()">
   <h2>Your portfolio</h2>
-  <label action="./portfolio" method="GET">
-    <ul id="dynamic-list"></ul>
-    Coin
-    <input type="text" name="newcoin" id="new-coin" />
-  </label>
-  <br />
+  <label action="./portfolio" method="GET"></label>
+<table id="table">
+    <thead>
+    <tr class="tr">
+        <th>Coin</th>
+        <th>Price</th>
+        <th>Amount</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr id="tr-one">
+        <td class="name-c">Monte Falco</td>
+        <td>1658</td>
+        <td class="amount-c">Parco Foreste Casentinesi</td>
+    </tr>
+    <tr id="tr-two">
+        <td class="name-c">Monte Falterona</td>
+        <td>1654</td>
+        <td class="amount-c">Parco Foreste Casentinesi</td>
+    </tr>
+    <tr id="tr-three">
+        <td class="name-c">Monte Falterona</td>
+        <td>1654</td>
+        <td class="amount-c">Parco Foreste Casentinesi</td>
+    </tr>
+    </tbody>
+</table>
   <label>
-    Current Price
-    <input type="text" name="pricenow" id="price-now" />
-  </label>
-  <br />
-  <label>
-    Amount
-    <input type="text" name="amountnow" id="amount-now" />
+    <input id="submit-myportfolio" type="submit" value="Show My Portfolio" />
   </label>
 </section>
 
