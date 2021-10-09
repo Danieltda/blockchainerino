@@ -1,11 +1,10 @@
 <nav>
   <div class="logo">
-     <h4 class="title-header"><a href="/" >BLOCKCHAINERINO</h4></a>
+     <h4 class="title-header">BLOCKCHAINERINO</h4></a>
   </div>
   <ul class="nav-links">
-    <li><a href="./auth/signup">Sign Up</a></li>
-    <li><a href="./auth/login">Log In</a></li>
     <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/auth/logout">Log Out</a></li>
   </ul>
   <div class="burger">
     <div class="line1"></div>
@@ -30,7 +29,7 @@
   </label>
   <br />
   <label class="title-portfolio">
-    Current Price
+    Current Price in USD
     <input type="text" name="currentPrice" id="current-price" readonly />
   </label>
   <br />
@@ -63,30 +62,23 @@
     <thead>
     <tr class="tr">
         <th>Coin</th>
-        <th>Price</th>
+        <th>Price in USD</th>
         <th>Amount</th>
     </tr>
     </thead>
     <tbody>
-    <tr id="tr-one">
-        <td class="name-c">Monte Falco</td>
-        <td>1658</td>
-        <td class="amount-c">Parco Foreste Casentinesi</td>
-    </tr>
-    <tr id="tr-two">
-        <td class="name-c">Monte Falterona</td>
-        <td>1654</td>
-        <td class="amount-c">Parco Foreste Casentinesi</td>
-    </tr>
-    <tr id="tr-three">
-        <td class="name-c">Monte Falterona</td>
-        <td>1654</td>
-        <td class="amount-c">Parco Foreste Casentinesi</td>
-    </tr>
+      {{#each personalPortfolio}}
+      <tr><td class="my-portfolio-td">{{this.coin}}</td>
+      <td class="my-portfolio-td">{{this.currentPrice}}</td>
+      <td class="my-portfolio-td">{{this.amount}}</td>
+      </tr>
+      
+      {{/each}}
+
     </tbody>
 </table>
   <label>
-    <input id="submit-myportfolio" type="submit" value="Show My Portfolio" />
+    <input id="submit-myportfolio" type="submit" value="Show Latest value" />
   </label>
 </section>
 

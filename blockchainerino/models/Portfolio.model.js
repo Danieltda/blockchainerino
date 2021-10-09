@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Mongoose } = require("mongoose");
 
 const portfolioSchema = new Schema({
   coin: {
@@ -16,6 +16,10 @@ const portfolioSchema = new Schema({
   totalvalue: {
     type: Number,
     required: true,
+  },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
   },
 });
 

@@ -13,23 +13,27 @@ const User = require("../models/User.model");
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
+const e = require("cors");
 
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", isLoggedOut, (req, res) => {
+router.post("/signup", isLoggedOut, async (req, res) => {
   const { username, email, password } = req.body;
+  console.log(email);
 
-  if (!username) {
-    return res
-      .status(400)
-      .render("auth/signup", { errorMessage: "Please provide your username." });
+  if (!username || !email) {
+    return res.status(400).render("auth/signup", {
+      errorMessage: "Please fill in all the information",
+      ...req.body,
+    });
   }
 
   if (password.length < 8) {
     return res.status(400).render("auth/signup", {
       errorMessage: "Your password needs to be at least 8 characters long.",
+      ...req.body,
     });
   }
 
@@ -42,6 +46,16 @@ router.post("/signup", isLoggedOut, (req, res) => {
       errorMessage:
         "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
     });
+  }
+
+  const foundUser = await User.findOne({ email });
+  // {user} || null
+  if (foundUser) {
+    res.render("auth/signup", {
+      errorMessage: "There is already a user with this email",
+      ...req.body,
+    });
+    return;
   }
 
   // Search the database for a user with the username submitted in the form
@@ -61,13 +75,14 @@ router.post("/signup", isLoggedOut, (req, res) => {
         // Create a user and save it in the database
         return User.create({
           username,
+          email,
           password: hashedPassword,
         });
       })
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
-        res.redirect("/");
+        res.redirect("/portfolio");
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
@@ -93,12 +108,20 @@ router.get("/login", isLoggedOut, (req, res) => {
 });
 
 router.post("/login", isLoggedOut, (req, res, next) => {
-  const { username, password } = req.body;
+  const { username, password, email } = req.body;
 
   if (!username) {
-    return res
-      .status(400)
-      .render("auth/login", { errorMessage: "Please provide your username." });
+    return res.status(400).render("auth/login", {
+      errorMessage: "Please provide your username.",
+      ...req.body,
+    });
+  }
+
+  if (!email) {
+    return res.render("auth/login", {
+      errorMessage: "Please provide your email!",
+      ...req.body,
+    });
   }
 
   // Here we use the same logic as above
@@ -106,29 +129,41 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   if (password.length < 8) {
     return res.status(400).render("auth/login", {
       errorMessage: "Your password needs to be at least 8 characters long.",
+      ...req.body,
     });
   }
+
+  User.findOne({ email }).then((user) => {
+    if (!user) {
+      return res.status(400).render("/auth/login", {
+        errorMessage: "Wrong credentials",
+        ...req.body,
+      });
+    }
+  });
 
   // Search the database for a user with the username submitted in the form
   User.findOne({ username })
     .then((user) => {
       // If the user isn't found, send the message that user provided wrong credentials
       if (!user) {
-        return res
-          .status(400)
-          .render("auth/login", { errorMessage: "Wrong credentials." });
+        return res.status(400).render("auth/login", {
+          errorMessage: "Wrong credentials.",
+          ...req.body,
+        });
       }
 
       // If user is found based on the username, check if the in putted password matches the one saved in the database
       bcrypt.compare(password, user.password).then((isSamePassword) => {
         if (!isSamePassword) {
-          return res
-            .status(400)
-            .render("auth/login", { errorMessage: "Wrong credentials." });
+          return res.status(400).render("auth/login", {
+            errorMessage: "Wrong credentials.",
+            ...req.body,
+          });
         }
         req.session.user = user;
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect("/");
+        return res.redirect("/portfolio");
       });
     })
 

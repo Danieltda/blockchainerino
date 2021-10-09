@@ -5,7 +5,6 @@
   <ul class="nav-links">
     <li><a href="./signup">Sign Up</a></li>
     <li><a href="./login">Log In</a></li>
-    <li><a href="/portfolio">Portfolio</a></li>
   </ul>
   <div class="burger">
     <div class="line1"></div>
@@ -18,16 +17,17 @@
   <label>
     Username
     <br>
-    <input id="label-username" type="text" name="username" />
+    <input id="label-username" type="text" name="username" value = "{{username}}"/>
   </label>
   <br />
     <label>
     Email
     <br>
-    <input id="label-email" type="email" name="email" />
+    <input id="label-email" type="email" name="email" value="{{email}}" />
   </label>
   <br />
   <label>
+        <br>
     Password
     <br>
     <input id="label-password" type="password" name="password" />
@@ -35,3 +35,8 @@
   <br />
   <button type="submit">Submit</button>
 </form>
+<div class="errorMessage">
+{{#if errorMessage }}
+  <p style="color:rgb(206, 240, 16)">{{errorMessage}}</p>
+{{/if}}
+</div>

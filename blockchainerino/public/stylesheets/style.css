@@ -228,6 +228,12 @@ nav {
   margin-top: 1rem;
 }
 
+.my-portfolio-td {
+  padding-right: 1.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
 /* Login styling */
 .login {
   color: white;
@@ -246,4 +252,12 @@ nav {
 
 #login-password {
   margin-bottom: 1rem;
+}
+
+/*Error Handling*/
+
+.errorMessage {
+  color: white;
+  text-align: center;
+  padding-top: 1rem;
 }
