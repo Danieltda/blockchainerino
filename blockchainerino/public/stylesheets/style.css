@@ -10,6 +10,47 @@ body {
   background-size: cover;
 }
 
+input[type="text"] {
+  padding: 3px;
+  margin: 10px 0;
+  border: 2px solid #eee;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+}
+
+input[type="text"]:focus ~ input[type="submit"] {
+  box-shadow: 0 0 2px 2px #555;
+}
+
+input[type="password"] {
+  padding: 3px;
+  margin: 10px 0;
+  border: 2px solid #eee;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+}
+
+input[type="email"] {
+  padding: 3px;
+  margin: 10px 0;
+  border: 2px solid #eee;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+}
+
+button {
+  /* remove default behavior */
+
+  /* usual styles */
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: #2c1320;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 5%;
+}
+
 /*Homepage styling*/
 
 nav {
@@ -119,6 +160,16 @@ nav {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
+#submitethereum {
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: #2c1320;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 5%;
+}
+
 /* index ethereum styling */
 .section-one {
   text-align: center;
@@ -126,9 +177,21 @@ nav {
 }
 
 #ethereum-input {
-  width: 15%;
+  width: 25%;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  height: 2rem;
+  text-align: center;
+}
+
+#total-amount {
+  text-align: center;
+  width: 13%;
+  padding: 3px;
+  margin: 10px 0;
+  border: 2px solid #eee;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
 }
 
 #ethereum-title {
@@ -177,9 +240,45 @@ nav {
   margin-right: 7rem;
 }
 
-#submit-portfolio {
+.submitbotton {
   margin-top: 1rem;
   margin-bottom: 2rem;
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: #2c1320;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 5%;
+}
+
+#submit-myportfolio {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: #2c1320;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 10%;
+}
+
+.input:focus {
+  outline: none !important;
+  border: 1px solid red;
+  box-shadow: 0 0 10px #719ece;
+}
+#delete-lastentry {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: #2c1320;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 10%;
 }
 
 #portfolio-header {
@@ -224,14 +323,26 @@ nav {
   padding-left: 2rem;
 }
 
-#submit-myportfolio {
-  margin-top: 1rem;
-}
-
 .my-portfolio-td {
   padding-right: 1.5rem;
   text-align: center;
   font-size: 1.2rem;
+}
+
+#coinname {
+  padding: 3px;
+  margin: 10px 0;
+  border: 2px solid #eee;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+}
+
+#crypamounts {
+  padding: 3px;
+  margin: 10px 0;
+  border: 2px solid #eee;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
 }
 
 /* Login styling */

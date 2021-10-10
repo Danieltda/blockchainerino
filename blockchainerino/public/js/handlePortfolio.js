@@ -3,7 +3,7 @@ document.addEventListener(
   () => {
     console.log("blockchainerino JS imported successfully!");
     update();
-    hidePortfolio();
+    // hidePortfolio();
   },
   false
 );
@@ -58,12 +58,17 @@ const navSlide = () => {
 
 navSlide();
 
-//Hide your portfolio
-function hidePortfolio() {
-  const section = document.getElementsByClassName("your-portfolio");
-  if (section.style.display === "none") {
-    section.style.display = "block";
-  } else {
-    section.style.display = "none";
-  }
+// //Hide your portfolio
+// function hidePortfolio() {
+//   const section = document.getElementsByClassName("your-portfolio");
+//   if (section.style.display === "none") {
+//     section.style.display = "block";
+//   } else {
+//     section.style.display = "none";
+//   }
+// }
+
+//Delete entry
+function deleteEntry() {
+  document.getElementById("delete-row").deleteRow(0);
 }

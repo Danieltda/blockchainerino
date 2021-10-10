@@ -107,7 +107,7 @@ router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
 });
 
-router.post("/login", isLoggedOut, (req, res, next) => {
+router.post("/login", isLoggedOut, async (req, res, next) => {
   const { username, password, email } = req.body;
 
   if (!username) {
@@ -133,14 +133,13 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     });
   }
 
-  User.findOne({ email }).then((user) => {
-    if (!user) {
-      return res.status(400).render("/auth/login", {
-        errorMessage: "Wrong credentials",
-        ...req.body,
-      });
-    }
-  });
+  const foundUser = await User.findOne({ email });
+
+  // no user with this email in db
+  if (!foundUser) {
+    res.render("auth/login", { errorMessage: "Wrong credentials" });
+    return;
+  }
 
   // Search the database for a user with the username submitted in the form
   User.findOne({ username })

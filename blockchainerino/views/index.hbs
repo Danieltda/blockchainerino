@@ -24,7 +24,7 @@
       />
     </label>
     <br />
-    <input onclick ="getEthereumAddress()" type="submit" value="Submit" />
+    <input id="submitethereum" onclick ="getEthereumAddress()" type="submit" value="Submit" />
   </form>
 </section>
 <section class="section-two">
@@ -39,4 +39,11 @@
         readonly
       />
     </label>
+    <div class="info">
+    <div class="error">
+    {{#if errorMessage }}
+  <p style="color:rgb(240, 68, 16)">{{errorMessage}}</p>
+{{/if}}
+</div>
+</div>
 </section>

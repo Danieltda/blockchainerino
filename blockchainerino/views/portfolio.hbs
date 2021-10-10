@@ -51,7 +51,7 @@
   </label>
   <br />
   <label>
-    <input id="submit-portfolio" type="submit" value="Submit" />
+    <input id="submit-portfolio" type="submit" value="Submit"  class="submitbotton"/>
   </label>
 </form>
 </section>
@@ -64,13 +64,15 @@
         <th>Coin</th>
         <th>Price in USD</th>
         <th>Amount</th>
+        <th>Total Value</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody id="delete-row">
       {{#each personalPortfolio}}
       <tr><td class="my-portfolio-td">{{this.coin}}</td>
       <td class="my-portfolio-td">{{this.currentPrice}}</td>
       <td class="my-portfolio-td">{{this.amount}}</td>
+      <td class="my-portfolio-td">{{this.totalvalue}}</td>
       </tr>
       
       {{/each}}
@@ -79,6 +81,9 @@
 </table>
   <label>
     <input id="submit-myportfolio" type="submit" value="Show Latest value" />
+  </label>
+    <label>
+    <input id="delete-lastentry" type="submit" value="Delete First Entry" onclick ="deleteEntry()"/>
   </label>
 </section>
 

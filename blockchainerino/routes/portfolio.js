@@ -17,6 +17,8 @@ router.get("/", isLoggedIn, async (req, res, next) => {
     }
   );
 
+  // console.log(getCoins);
+
   const portfolio = Portfolio.find({
     owner: req.user._id,
   });
@@ -47,7 +49,7 @@ router.get("/", isLoggedIn, async (req, res, next) => {
   //   owner: req.user._id,
   // });
 
-  console.log(portfolioFromUser);
+  // console.log(portfolioFromUser);
 
   // console.log(Object(axiosResponse));
 

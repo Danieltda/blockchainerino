@@ -19,6 +19,11 @@ const web3 = new Web3(provider);
 router.get("/", async (req, res, next) => {
   const { ethereumAddress } = req.query;
   try {
+    if (!ethereumAddress) {
+      return res.render("index", {
+        errorMessage: "Please provide an Ethereum Address",
+      });
+    }
     let balance = "";
     if (ethereumAddress) {
       balance = web3.utils.fromWei(await web3.eth.getBalance(ethereumAddress));
