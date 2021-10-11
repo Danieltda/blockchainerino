@@ -79,6 +79,13 @@ router.post("/", isLoggedIn, async (req, res) => {
   }
 });
 
+// router.get("/", async(req,res) => {
+//    const portfolio = Portfolio.find({
+//      owner: req.user._id,
+//    });
+
+// })
+
 router.get(":id", isLoggedIn, async (req, res) => {});
 
 module.exports = router;
