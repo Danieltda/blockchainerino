@@ -89,16 +89,13 @@ router.get("/delete", isLoggedIn, async (req, res) => {
       id: req.user._id,
     });
 
-    console.log(userId);
-    // console.log(portfolio);
-
+    // console.log(userId);
     // console.log(portfolio);
     // console.log(req.session);
 
-    // console.log(portfolio);
     const owner = portfolio._conditions.owner;
     const userID = userId._conditions.id;
-    const session = req.session.user._id;
+    //const session = req.session.user._id;
     // console.log(session);
 
     // console.log(owner);
@@ -106,6 +103,8 @@ router.get("/delete", isLoggedIn, async (req, res) => {
     if (owner == userID) {
       await Portfolio.findOneAndDelete({ owner: owner, sort: { _id: 1 } });
     }
+
+    res.redirect("/portfolio");
 
     // console.log(req);
   } catch (err) {
