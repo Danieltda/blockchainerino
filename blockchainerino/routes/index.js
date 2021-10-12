@@ -14,11 +14,10 @@ const isLoggedOut = require("../middleware/isLoggedOut");
 // // 1. Import coingecko-api
 // const CoinGecko = require("coingecko-api");
 
-// //2. Initiate the CoinGecko API Client
-// const CoinGeckoClient = new CoinGecko();
-
-/* GET home page */
-router.get("/", async (req, res, next) => {
+async function whenNotLoggedIn(req, res) {
+  if (!Object.keys(req.query).length) {
+    return res.render("index");
+  }
   const { ethereumAddress } = req.query;
   try {
     if (!ethereumAddress) {
@@ -34,9 +33,20 @@ router.get("/", async (req, res, next) => {
   } catch (err) {
     return err;
   }
+}
+
+// //2. Initiate the CoinGecko API Client
+// const CoinGeckoClient = new CoinGecko();
+
+/* GET home page */
+router.get("/", async (req, res, next) => {
+  if (!req.session.user) {
+    return whenNotLoggedIn(req, res);
+  }
+  res.redirect("/portfolio");
 });
 
-// router.get("/", isLoggedIn, async (req, res) => {
+// router.get("/", async (req, res) => {
 //   try {
 //     res.redirect("./portfolio.js");
 //   } catch {}

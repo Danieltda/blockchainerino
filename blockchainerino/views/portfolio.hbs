@@ -16,7 +16,7 @@
 <h1 id="portfolio-header">Manage your portfolio!</h1>
 <form action="./portfolio" method="POST">
   <label class="title-portfolio">Select Your Coin
-    <select name="coin" id="coinname" onChange="update()">
+    <select name="coin" id="coinname" onChange="update()" >
       {{#each coinname}}
           <option  
             name="coin"
@@ -51,11 +51,12 @@
   </label>
   <br />
   <label>
-    <input id="submit-portfolio" type="submit" value="Submit"  class="submitbotton"/>
+    <input id="submit-portfolio" type="submit" value="Submit"  class="submitbotton" />
   </label>
 </form>
 </section>
-<section class="your-portfolio" onclick="hidePortfolio()">
+{{#if personalPortfolio}}
+<section class="your-portfolio">
   <h2>Your portfolio</h2>
   <label action="./portfolio" method="GET"></label>
 <table id="table">
@@ -86,5 +87,6 @@
     <input id="delete-lastentry" type="submit" value="Delete First Entry" onclick ="deleteEntry()"/>
 </form>
 </section>
+{{/if}}
 
 <script src="/js/handlePortfolio.js"></script>

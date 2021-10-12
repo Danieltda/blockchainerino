@@ -85,6 +85,7 @@ router.get("/delete", isLoggedIn, async (req, res) => {
       owner: req.user._id,
     });
 
+    console.log(portfolio);
     const userId = User.find({
       id: req.user._id,
     });
@@ -94,6 +95,7 @@ router.get("/delete", isLoggedIn, async (req, res) => {
     // console.log(req.session);
 
     const owner = portfolio._conditions.owner;
+    console.log(owner);
     const userID = userId._conditions.id;
     //const session = req.session.user._id;
     // console.log(session);
