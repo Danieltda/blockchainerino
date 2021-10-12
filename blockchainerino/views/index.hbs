@@ -26,6 +26,10 @@
     <br />
     <input id="submitethereum" onclick ="getEthereumAddress()" type="submit" value="Submit" />
   </form>
+ <br />
+      {{#if errorMessage }}
+  <p style="color:rgb(240, 68, 16)">{{errorMessage}}</p>
+{{/if}}
 </section>
 <section class="section-two">
   <h1 id="ethereum-total-amount">Total Ethereum Amount:</h1>
@@ -41,9 +45,7 @@
     </label>
     <div class="info">
     <div class="error">
-    {{#if errorMessage }}
-  <p style="color:rgb(240, 68, 16)">{{errorMessage}}</p>
-{{/if}}
+
 </div>
 </div>
 </section>

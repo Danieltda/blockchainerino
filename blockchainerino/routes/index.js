@@ -8,6 +8,8 @@ const provider = new Web3.providers.HttpProvider(
   `https://mainnet.infura.io/v3/${API_KEY_INFURA}`
 );
 const web3 = new Web3(provider);
+const isLoggedIn = require("../middleware/isLoggedIn");
+const isLoggedOut = require("../middleware/isLoggedOut");
 
 // // 1. Import coingecko-api
 // const CoinGecko = require("coingecko-api");
@@ -33,5 +35,11 @@ router.get("/", async (req, res, next) => {
     return err;
   }
 });
+
+// router.get("/", isLoggedIn, async (req, res) => {
+//   try {
+//     res.redirect("./portfolio.js");
+//   } catch {}
+// });
 
 module.exports = router;

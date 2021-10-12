@@ -21,7 +21,6 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 router.post("/signup", isLoggedOut, async (req, res) => {
   const { username, email, password } = req.body;
-  console.log(email);
 
   if (!username || !email) {
     return res.status(400).render("auth/signup", {
@@ -42,7 +41,7 @@ router.post("/signup", isLoggedOut, async (req, res) => {
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
 
   if (!regex.test(password)) {
-    return res.status(400).render("signup", {
+    return res.status(400).render("auth/signup", {
       errorMessage:
         "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
     });
@@ -64,7 +63,7 @@ router.post("/signup", isLoggedOut, async (req, res) => {
     if (found) {
       return res
         .status(400)
-        .render("auth.signup", { errorMessage: "Username already taken." });
+        .render("auth/signup", { errorMessage: "Username already taken." });
     }
 
     // if user is not found, create a new user - start with hashing the password

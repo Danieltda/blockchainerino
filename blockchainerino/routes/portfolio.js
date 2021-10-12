@@ -79,13 +79,38 @@ router.post("/", isLoggedIn, async (req, res) => {
   }
 });
 
-// router.get("/", async(req,res) => {
-//    const portfolio = Portfolio.find({
-//      owner: req.user._id,
-//    });
+router.get("/delete", isLoggedIn, async (req, res) => {
+  try {
+    const portfolio = Portfolio.find({
+      owner: req.user._id,
+    });
 
-// })
+    const userId = User.find({
+      id: req.user._id,
+    });
 
-router.get(":id", isLoggedIn, async (req, res) => {});
+    console.log(userId);
+    // console.log(portfolio);
+
+    // console.log(portfolio);
+    // console.log(req.session);
+
+    // console.log(portfolio);
+    const owner = portfolio._conditions.owner;
+    const userID = userId._conditions.id;
+    const session = req.session.user._id;
+    // console.log(session);
+
+    // console.log(owner);
+
+    if (owner == userID) {
+      await Portfolio.findOneAndDelete({ owner: owner, sort: { _id: 1 } });
+    }
+
+    // console.log(req);
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 module.exports = router;
