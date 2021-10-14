@@ -100,39 +100,6 @@ nav {
   transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 1024px) {
-  .nav-links {
-    width: 60%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-  }
-  .nav-links {
-    position: absolute;
-    right: 0px;
-    height: 92vh;
-    top: 8vh;
-    background-color: #79626e;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
-  }
-
-  .nav-links li {
-    opacity: 0;
-  }
-
-  .burger {
-    display: block;
-  }
-}
-
 .nav-active {
   transform: translateX(0%);
 }
@@ -249,7 +216,7 @@ nav {
   background-color: #2c1320;
   font-weight: 600;
   border-radius: 5px;
-  width: 5%;
+  width: 10%;
 }
 
 #submit-myportfolio {
@@ -270,7 +237,7 @@ nav {
   box-shadow: 0 0 10px #719ece;
 }
 #delete-lastentry {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 2rem;
   padding: 10px;
   border: none;
@@ -372,4 +339,505 @@ nav {
   color: white;
   text-align: center;
   padding-top: 1rem;
+}
+
+/*media-queriues*/
+
+@media screen and (max-width: 1300px) {
+  .nav-links {
+    width: 60%;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #79626e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #79626e;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .logo {
+    color: rgb(226, 226, 266);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgb(226, 226, 266);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 266);
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+    opacity: 0;
+  }
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .yourportfolio {
+    font-size: 2rem;
+  }
+
+  #total-amount {
+    text-align: center;
+    width: 20%;
+    padding: 3px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+  }
+
+  .portfolio-section {
+    text-align: center;
+    color: white;
+    margin-top: 4rem;
+    margin-left: 2rem;
+    border-bottom: 2px solid white;
+    margin-right: 7rem;
+  }
+
+  .submitbotton {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #2c1320;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 16%;
+  }
+
+  #submit-myportfolio {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #2c1320;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 30%;
+  }
+
+  .input:focus {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 10px #719ece;
+  }
+  #delete-lastentry {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #2c1320;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 20%;
+  }
+
+  #portfolio-header {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .title-portfolio {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .your-portfolio {
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    font-size: 2rem;
+  }
+
+  #table {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+  }
+
+  .tr {
+    font-size: 1.3rem;
+  }
+
+  #tr-one {
+    padding-left: 1rem;
+  }
+
+  .name-c {
+    padding-right: 2rem;
+  }
+
+  .amount-c {
+    padding-left: 2rem;
+  }
+
+  .my-portfolio-td {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  #coinname {
+    padding: 3px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+  }
+
+  #crypamounts {
+    padding: 3px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+  }
+
+  #ethereum-title {
+    font-size: 4rem;
+  }
+
+  #ethereum-input {
+    width: 20%;
+  }
+
+  #submitethereum {
+    width: 20%;
+  }
+
+  #submit-sign-up {
+    width: 10%;
+  }
+
+  #login-submit-button {
+    width: 17%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 8vh;
+    background-color: #79626e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #79626e;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .logo {
+    color: rgb(226, 226, 266);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgb(226, 226, 266);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 266);
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+    opacity: 0;
+  }
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .yourportfolio {
+    font-size: 2rem;
+  }
+
+  #submit-sign-up {
+    width: 30%;
+  }
+
+  #login-submit-button {
+    width: 30%;
+  }
+  #total-amount {
+    text-align: center;
+    width: 35%;
+    padding: 3px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+  }
+
+  .portfolio-section {
+    text-align: center;
+    color: white;
+    margin-top: 4rem;
+    margin-left: 2rem;
+    border-bottom: 2px solid white;
+    margin-right: 7rem;
+  }
+
+  .submitbotton {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #2c1320;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 30%;
+  }
+
+  #submit-myportfolio {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #2c1320;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 30%;
+  }
+
+  .input:focus {
+    outline: none !important;
+    border: 1px solid red;
+    box-shadow: 0 0 10px #719ece;
+  }
+  #delete-lastentry {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 10px;
+    border: none;
+    color: white;
+    background-color: #2c1320;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 30%;
+  }
+
+  #portfolio-header {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .title-portfolio {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .your-portfolio {
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    font-size: 2rem;
+  }
+
+  #table {
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+  }
+
+  .tr {
+    font-size: 1.3rem;
+  }
+
+  #tr-one {
+    padding-left: 1rem;
+  }
+
+  .name-c {
+    padding-right: 2rem;
+  }
+
+  .amount-c {
+    padding-left: 2rem;
+  }
+
+  .my-portfolio-td {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+  #coinname {
+    padding: 3px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+  }
+
+  #crypamounts {
+    padding: 3px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+  }
+
+  #ethereum-title {
+    font-size: 2rem;
+  }
+
+  #ethereum-input {
+    width: 50%;
+  }
+
+  #submitethereum {
+    width: 30%;
+  }
 }
