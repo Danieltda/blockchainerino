@@ -63,7 +63,7 @@
     <thead>
     <tr class="tr">
         <th>Coin</th>
-        <th>Price in USD</th>
+        <th>Price</th>
         <th>Amount</th>
         <th>Total Value</th>
     </tr>
@@ -71,9 +71,9 @@
     <tbody id="delete-row">
       {{#each personalPortfolio}}
       <tr><td class="my-portfolio-td">{{this.coin}}</td>
-      <td class="my-portfolio-td">{{this.currentPrice}}</td>
+      <td class="my-portfolio-td">${{this.currentPrice}}</td>
       <td class="my-portfolio-td">{{this.amount}}</td>
-      <td class="my-portfolio-td">{{this.totalvalue}}</td>
+      <td class="my-portfolio-td">${{this.totalvalue}}</td>
       </tr>
       
       {{/each}}
